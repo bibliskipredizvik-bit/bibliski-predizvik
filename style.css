@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #d4af37;
+}
+
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 16px;
+}
+
+
+nav a:hover {
+    color: #d4af37;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    text-align: center;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+}
+
+
+.bible-icon {
+    font-size: 70px;
+}
+
+
+h1 {
+    margin-top: 20px;
+    font-size: 48px;
+    color: #d4af37;
+}
+
+
+h2 {
+    margin-top: 15px;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+
+p {
+    margin: 30px auto;
+    line-height: 1.8;
+    font-size: 18px;
+    max-width: 700px;
+}
+
+
+/* INFO BOXES */
+
+.info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+
+.info div {
+    background: white;
+    color: #0f172a;
+    width: 150px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+
+.info strong {
+    display: block;
+    font-size: 30px;
+    color: #d4af37;
+}
+
+
+.info span {
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* BUTTON */
+
+button {
+
+    background: #d4af37;
+    color: #0f172a;
+
+    border: none;
+    padding: 15px 40px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #cbd5e1;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+header{
+
+    flex-direction: column;
+    gap:20px;
+
+}
+
+
+h1{
+
+    font-size:35px;
+
+}
+
+
+.info{
+
+    flex-direction: column;
+    align-items:center;
+
+}
+
+}
