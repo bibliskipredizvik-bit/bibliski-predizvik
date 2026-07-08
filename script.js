@@ -117,20 +117,20 @@ if(currentQuestion < questions.length){
 loadQuestion();
 
 }
-
 else{
 
+document.querySelector(".quiz-box").innerHTML = `
+<h2>Квизот е завршен!</h2>
 
-alert(
-"Квизот е завршен!\n\nВаш резултат: "
-+ score + " / " + questions.length
-);
+<p>
+Ваш резултат е
+<strong>${score} / ${questions.length}</strong>
+</p>
 
+<button onclick="location.href='index.html'">
+Почетна
+</button>
+
+`;
 
 }
-
-
-}
-
-
-loadQuestion();
