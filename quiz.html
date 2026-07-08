@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="mk">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,6 +11,7 @@
 <link rel="stylesheet" href="style.css">
 
 </head>
+
 
 <body>
 
@@ -27,7 +30,10 @@
 <section class="hero">
 
 
-<h1>Библиски Квиз</h1>
+<h1>
+Библиски Квиз
+</h1>
+
 
 <h2>
 Провери го своето знаење од Светото Писмо
@@ -38,36 +44,43 @@
 <div class="quiz-box">
 
 
-<h2>
+<h2 id="question-number">
 Прашање 1 од 5
 </h2>
 
 
-<p>
+<p id="question-text">
 Кој ја изградил Ноевата арка?
 </p>
 
 
+
+<div id="answers">
+
+
 <label>
-<input type="radio" name="q1">
+<input type="radio" name="answer" value="0">
 Авраам
 </label>
 
 
 <label>
-<input type="radio" name="q1">
+<input type="radio" name="answer" value="1">
 Ное
 </label>
 
 
 <label>
-<input type="radio" name="q1">
+<input type="radio" name="answer" value="2">
 Мојсеј
 </label>
 
 
+</div>
 
-<br><br>
+
+
+<br>
 
 
 <button onclick="nextQuestion()">
@@ -75,10 +88,12 @@
 </button>
 
 
+
 </div>
 
 
 </section>
+
 
 
 <footer>
@@ -88,7 +103,10 @@
 </footer>
 
 
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
