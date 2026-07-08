@@ -7,7 +7,47 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+<script>
 
+function startQuiz(){
+
+let name =
+document.querySelectorAll(".register-form input")[0].value;
+
+
+let surname =
+document.querySelectorAll(".register-form input")[1].value;
+
+
+let city =
+document.querySelectorAll(".register-form input")[2].value;
+
+
+let phone =
+document.querySelectorAll(".register-form input")[3].value;
+
+
+if(name=="" || surname=="" || city=="" || phone==""){
+
+alert("Ве молиме пополнете ги задолжителните полиња.");
+
+return;
+
+}
+
+
+localStorage.setItem("name", name);
+localStorage.setItem("surname", surname);
+localStorage.setItem("city", city);
+localStorage.setItem("phone", phone);
+
+
+window.location.href="quiz.html";
+
+
+}
+
+</script>
 <body>
 
 <header>
@@ -55,11 +95,9 @@
             Се согласувам со правилата на квизот
         </label>
 
-<a href="quiz.html">
-    <button type="button">
-        Продолжи кон квиз
-    </button>
-</a>
+<button type="button" onclick="startQuiz()">
+    Продолжи кон квиз
+</button>
 
     </form>
 
