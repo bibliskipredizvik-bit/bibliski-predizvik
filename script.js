@@ -87,7 +87,9 @@ ${q.answers[index]}
 }
 
 
+
 function nextQuestion(){
+
 
 let selected =
 document.querySelector('input[name="answer"]:checked');
@@ -117,15 +119,31 @@ if(currentQuestion < questions.length){
 loadQuestion();
 
 }
+
 else{
 
+
+let playerName = localStorage.getItem("name") || "Играч";
+
+
+let playerSurname = localStorage.getItem("surname") || "";
+
+
 document.querySelector(".quiz-box").innerHTML = `
-<h2>Квизот е завршен!</h2>
+
+<h2>Квизот е завршен! 🏆</h2>
+
 
 <p>
-Ваш резултат е
+Браво ${playerName} ${playerSurname}!
+</p>
+
+
+<p>
+Ваш резултат е:
 <strong>${score} / ${questions.length}</strong>
 </p>
+
 
 <button onclick="location.href='index.html'">
 Почетна
@@ -134,3 +152,10 @@ document.querySelector(".quiz-box").innerHTML = `
 `;
 
 }
+
+
+}
+
+
+
+loadQuestion();
