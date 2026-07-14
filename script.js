@@ -7,7 +7,11 @@ let score = 0;
 function loadQuestion() {
 
     let q = quizQuestions[currentQuestion];
+let percent =
+((currentQuestion + 1) / quizQuestions.length) * 100;
 
+document.getElementById("progress-bar").style.width =
+percent + "%";
     document.getElementById("question-number").innerHTML =
         "Прашање " + (currentQuestion + 1) + " од " + quizQuestions.length;
 
