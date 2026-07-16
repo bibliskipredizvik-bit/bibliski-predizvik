@@ -7,29 +7,32 @@ let score = 0;
 function loadQuestion() {
 
     let q = quizQuestions[currentQuestion];
-let percent =
-((currentQuestion + 1) / quizQuestions.length) * 100;
 
-document.getElementById("progress-bar").style.width =
-percent + "%";
+    let percent =
+        ((currentQuestion + 1) / quizQuestions.length) * 100;
+
+    document.getElementById("progress-bar").style.width =
+        percent + "%";
+
     document.getElementById("question-number").innerHTML =
         "Прашање " + (currentQuestion + 1) + " од " + quizQuestions.length;
 
     document.getElementById("question-text").innerHTML =
         q.question;
 
-    let answersDiv = document.getElementById("answers");
+    let answersDiv =
+        document.getElementById("answers");
 
     answersDiv.innerHTML = "";
 
     q.answers.forEach((answer, index) => {
 
         answersDiv.innerHTML += `
-        <label>
-            <input type="radio" name="answer" value="${index}">
-            ${answer}
-        </label><br>
-        `;
+<label>
+<input type="radio" name="answer" value="${index}">
+${answer}
+</label><br><br>
+`;
 
     });
 
@@ -37,7 +40,8 @@ percent + "%";
 
 function nextQuestion() {
 
-    let selected = document.querySelector('input[name="answer"]:checked');
+    let selected =
+        document.querySelector('input[name="answer"]:checked');
 
     if (!selected) {
 
@@ -63,8 +67,13 @@ function nextQuestion() {
 
     else {
 
-        let name = localStorage.getItem("name") || "Играч";
-        let surname = localStorage.getItem("surname") || "";
+        saveResult();
+
+        let name =
+            localStorage.getItem("name") || "";
+
+        let surname =
+            localStorage.getItem("surname") || "";
 
         document.querySelector(".quiz-box").innerHTML = `
 
@@ -72,7 +81,7 @@ function nextQuestion() {
 
 <p><strong>${name} ${surname}</strong></p>
 
-<h3>${score} / ${quizQuestions.length}</h3>
+<h3>Резултат: ${score} / ${quizQuestions.length}</h3>
 
 <button onclick="location.href='index.html'">
 Почетна
@@ -81,6 +90,38 @@ function nextQuestion() {
 `;
 
     }
+
+}
+
+function saveResult() {
+
+    let player = {
+
+        name: localStorage.getItem("name"),
+
+        surname: localStorage.getItem("surname"),
+
+        city: localStorage.getItem("city"),
+
+        phone: localStorage.getItem("phone"),
+
+        score: score,
+
+        total: quizQuestions.length,
+
+        date: new Date().toLocaleString()
+
+    };
+
+    let results =
+        JSON.parse(localStorage.getItem("results")) || [];
+
+    results.push(player);
+
+    localStorage.setItem(
+        "results",
+        JSON.stringify(results)
+    );
 
 }
 
